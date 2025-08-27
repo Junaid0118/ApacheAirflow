@@ -38,7 +38,7 @@ with DAG(
     default_args=default_args,
     description='Simple ETL DAG with CSV',
     start_date=datetime(2025, 8, 25),
-    schedule='@daily',  # Updated from schedule_interval
+    schedule='@daily',
     catchup=False,
 ) as dag:
 
