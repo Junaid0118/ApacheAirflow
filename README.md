@@ -87,8 +87,8 @@ extract_task ---> transform_task ---> load_task
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/<your-username>/ApacheAirflowDay01.git
-cd ApacheAirflowDay01
+git clone https://github.com/Junaid0118/ApacheAirflow.git
+cd ApacheAirflow
 ```
 
 ### 2️⃣ Start Airflow
