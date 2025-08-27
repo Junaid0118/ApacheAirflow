@@ -1,8 +1,3 @@
-Here’s a **beautiful and professional `README.md`** that demonstrates your Airflow ETL project in a clear, human-friendly way. It highlights your skills, explains the workflow, and looks polished for GitHub.
-
----
-
-```markdown
 # 🚀 Apache Airflow ETL Pipeline  
 
 This project demonstrates a **simple but powerful ETL (Extract, Transform, Load) pipeline** built with **Apache Airflow**.  
@@ -16,21 +11,6 @@ The DAG orchestrates the flow of data from extraction to transformation and fina
 - 🔹 **Task Orchestration** with XCom for passing data between tasks.  
 - 🔹 **Retry & Alert Mechanism** – email notifications on failures.  
 - 🔹 **Modular & Extensible** – easy to scale for real-world data workflows.  
-
----
-
-## 📂 Project Structure
-```
-
-.
-├── dags/
-│   └── etl\_csv\_pipeline.py   # Main Airflow DAG
-├── utils/
-│   └── deliveries.csv        # Input CSV file
-├── output.csv                # Final output (generated)
-└── README.md                 # Project documentation
-
-````
 
 ---
 
@@ -145,20 +125,8 @@ airflow dags trigger etl_csv_pipeline
 
 **Junaid Iqbal**
 📧 [junaidiqbalshah011@gmail.com](mailto:junaidiqbalshah011@gmail.com)
-🔗 [LinkedIn](https://www.linkedin.com/in/your-profile)
+🔗 [LinkedIn](https://www.linkedin.com/in/junaid-iqbal-4b0037215/)
 
 ---
 
 ⭐ If you found this helpful, give the repo a star and share it with your network!
-
-```
-
----
-
-⚡ This version is:  
-- **Readable** (uses emojis + headings)  
-- **SEO friendly** (keywords: *Airflow, ETL, Python, DAG, CSV, XCom, Data Engineering*)  
-- **Professional** (good for portfolio + GitHub showcase)
-
-Would you like me to also create a **short LinkedIn post** version of this README (like a teaser) so you can share your work there for visibility?
-```
