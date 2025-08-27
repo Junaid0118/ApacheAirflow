@@ -1,0 +1,38 @@
+[2025-08-27T22:41:44.234+0500] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-27T22:41:44.244+0500] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_csv_pipeline.transform_task scheduled__2025-08-26T00:00:00+00:00 [queued]>
+[2025-08-27T22:41:44.248+0500] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_csv_pipeline.transform_task scheduled__2025-08-26T00:00:00+00:00 [queued]>
+[2025-08-27T22:41:44.248+0500] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2025-08-27T22:41:44.254+0500] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_task> on 2025-08-26 00:00:00+00:00
+[2025-08-27T22:41:44.261+0500] {standard_task_runner.py:63} INFO - Started process 74356 to run task
+[2025-08-27T22:41:44.265+0500] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'etl_csv_pipeline', 'transform_task', 'scheduled__2025-08-26T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/etl_csv_pipeline.py', '--cfg-path', '/var/folders/qd/tg0x144j35g7_hrcjsdscnrw0000gn/T/tmpuge27ktv']
+[2025-08-27T22:41:44.265+0500] {standard_task_runner.py:91} INFO - Job 5: Subtask transform_task
+[2025-08-27T22:41:44.289+0500] {task_command.py:426} INFO - Running <TaskInstance: etl_csv_pipeline.transform_task scheduled__2025-08-26T00:00:00+00:00 [running]> on host devs-macbook-pro-16.local
+[2025-08-27T22:41:44.319+0500] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='junaidiqbalshah011@gmail.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_csv_pipeline' AIRFLOW_CTX_TASK_ID='transform_task' AIRFLOW_CTX_EXECUTION_DATE='2025-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-26T00:00:00+00:00'
+[2025-08-27T22:41:44.320+0500] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-27T22:41:47.467+0500] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-27T22:41:47.468+0500] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py", line 15, in transform
+    transformed_data = pd.DataFrame.from_dict(data)[['match_no']]
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/core/indexes/base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/core/indexes/base.py", line 6261, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['match_no'], dtype='object')] are in the [columns]"
+[2025-08-27T22:41:47.498+0500] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_csv_pipeline, task_id=transform_task, run_id=scheduled__2025-08-26T00:00:00+00:00, execution_date=20250826T000000, start_date=20250827T174144, end_date=20250827T174147
+[2025-08-27T22:41:47.502+0500] {standard_task_runner.py:110} ERROR - Failed to execute job 5 for task transform_task ("None of [Index(['match_no'], dtype='object')] are in the [columns]"; 74356)
+[2025-08-27T22:41:47.559+0500] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-27T22:41:47.569+0500] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-27T22:41:47.570+0500] {local_task_job_runner.py:222} INFO - ::endgroup::

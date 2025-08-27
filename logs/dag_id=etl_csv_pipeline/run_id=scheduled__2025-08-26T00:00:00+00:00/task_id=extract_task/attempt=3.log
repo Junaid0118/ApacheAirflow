@@ -1,0 +1,132 @@
+[2025-08-27T05:32:47.302+0500] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-27T05:32:47.310+0500] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_csv_pipeline.extract_task scheduled__2025-08-26T00:00:00+00:00 [queued]>
+[2025-08-27T05:32:47.313+0500] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_csv_pipeline.extract_task scheduled__2025-08-26T00:00:00+00:00 [queued]>
+[2025-08-27T05:32:47.313+0500] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2025-08-27T05:32:47.319+0500] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract_task> on 2025-08-26 00:00:00+00:00
+[2025-08-27T05:32:47.325+0500] {standard_task_runner.py:63} INFO - Started process 60225 to run task
+[2025-08-27T05:32:47.329+0500] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'etl_csv_pipeline', 'extract_task', 'scheduled__2025-08-26T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/etl_csv_pipeline.py', '--cfg-path', '/var/folders/qd/tg0x144j35g7_hrcjsdscnrw0000gn/T/tmps5hlkraq']
+[2025-08-27T05:32:47.330+0500] {standard_task_runner.py:91} INFO - Job 11: Subtask extract_task
+[2025-08-27T05:32:47.355+0500] {task_command.py:426} INFO - Running <TaskInstance: etl_csv_pipeline.extract_task scheduled__2025-08-26T00:00:00+00:00 [running]> on host devs-macbook-pro-16.local
+[2025-08-27T05:32:47.383+0500] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='junaidiqbalshah011@gmail.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_csv_pipeline' AIRFLOW_CTX_TASK_ID='extract_task' AIRFLOW_CTX_EXECUTION_DATE='2025-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-26T00:00:00+00:00'
+[2025-08-27T05:32:47.384+0500] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-27T05:32:47.385+0500] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-27T05:32:47.386+0500] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py", line 9, in extract
+    df = pd.read_csv('/path/to/input.csv')
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/path/to/input.csv'
+[2025-08-27T05:32:47.411+0500] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=etl_csv_pipeline, task_id=extract_task, run_id=scheduled__2025-08-26T00:00:00+00:00, execution_date=20250826T000000, start_date=20250827T003247, end_date=20250827T003247
+[2025-08-27T05:32:47.422+0500] {logging_mixin.py:188} WARNING - /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/utils/email.py:154 RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+[2025-08-27T05:32:47.422+0500] {configuration.py:1050} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-08-27T05:32:47.422+0500] {email.py:271} INFO - Email alerting: attempt 1
+[2025-08-27T05:32:47.425+0500] {configuration.py:1050} WARNING - section/key [smtp/smtp_user] not found in config
+[2025-08-27T05:32:47.425+0500] {email.py:271} INFO - Email alerting: attempt 1
+[2025-08-27T05:32:47.426+0500] {taskinstance.py:879} ERROR - Failed to send email to: ['junaidiqbalshah011@gmail.com']
+Traceback (most recent call last):
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 2479, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 2676, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 2701, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py", line 9, in extract
+    df = pd.read_csv('/path/to/input.csv')
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/path/to/input.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 1063, in _email_alert
+    send_email(task.email, subject, html_content)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/utils/email.py", line 273, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/utils/email.py", line 317, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 843, in create_connection
+    raise err
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 877, in _handle_failure
+    task_instance.email_alert(error, failure_context["task"])
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 3163, in email_alert
+    _email_alert(task_instance=self, exception=exception, task=task)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/models/taskinstance.py", line 1065, in _email_alert
+    send_email(task.email, subject, html_content_err)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/utils/email.py", line 80, in send_email
+    return backend(
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/utils/email.py", line 154, in send_email_smtp
+    send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/utils/email.py", line 273, in send_mime_email
+    smtp_conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/utils/email.py", line 317, in _get_smtp_connection
+    return smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 843, in create_connection
+    raise err
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 831, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+[2025-08-27T05:32:47.435+0500] {standard_task_runner.py:110} ERROR - Failed to execute job 11 for task extract_task ([Errno 2] No such file or directory: '/path/to/input.csv'; 60225)
+[2025-08-27T05:32:47.452+0500] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-27T05:32:47.462+0500] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-27T05:32:47.464+0500] {local_task_job_runner.py:222} INFO - ::endgroup::
