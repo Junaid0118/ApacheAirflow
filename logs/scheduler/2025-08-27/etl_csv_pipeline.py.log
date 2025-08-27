@@ -4604,3 +4604,17 @@
 [2025-08-27T23:07:28.370+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:07:28.369+0500] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-08-27T23:07:28.380+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:07:28.380+0500] {dag.py:3954} INFO - Setting next_dagrun for etl_csv_pipeline to 2025-08-27 00:00:00+00:00, run_after=2025-08-28 00:00:00+00:00
 [2025-08-27T23:07:28.388+0500] {processor.py:183} INFO - Processing /Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py took 0.348 seconds
+[2025-08-27T23:08:07.581+0500] {processor.py:161} INFO - Started process (PID=94297) to work on /Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py
+[2025-08-27T23:08:07.583+0500] {processor.py:830} INFO - Processing file /Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py for tasks to queue
+[2025-08-27T23:08:07.583+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:07.583+0500] {dagbag.py:545} INFO - Filling up the DagBag from /Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py
+[2025-08-27T23:08:07.838+0500] {processor.py:840} INFO - DAG(s) 'etl_csv_pipeline' retrieved from /Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py
+[2025-08-27T23:08:07.888+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:07.888+0500] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-27T23:08:07.898+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:07.898+0500] {dag.py:3954} INFO - Setting next_dagrun for etl_csv_pipeline to 2025-08-27 00:00:00+00:00, run_after=2025-08-28 00:00:00+00:00
+[2025-08-27T23:08:07.906+0500] {processor.py:183} INFO - Processing /Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py took 0.327 seconds
+[2025-08-27T23:08:52.062+0500] {processor.py:161} INFO - Started process (PID=95872) to work on /Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py
+[2025-08-27T23:08:52.063+0500] {processor.py:830} INFO - Processing file /Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py for tasks to queue
+[2025-08-27T23:08:52.064+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:52.064+0500] {dagbag.py:545} INFO - Filling up the DagBag from /Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py
+[2025-08-27T23:08:52.372+0500] {processor.py:840} INFO - DAG(s) 'etl_csv_pipeline' retrieved from /Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py
+[2025-08-27T23:08:52.426+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:52.426+0500] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-27T23:08:52.436+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:52.436+0500] {dag.py:3954} INFO - Setting next_dagrun for etl_csv_pipeline to 2025-08-27 00:00:00+00:00, run_after=2025-08-28 00:00:00+00:00
+[2025-08-27T23:08:52.445+0500] {processor.py:183} INFO - Processing /Users/dev/Desktop/workspace/Data-Engineering/Apache-Airflow/Day-01/dags/etl_csv_pipeline.py took 0.385 seconds

@@ -3015,3 +3015,10 @@
 [2025-08-27T23:07:24.049+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:07:24.049+0500] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-08-27T23:07:24.058+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:07:24.058+0500] {dag.py:3954} INFO - Setting next_dagrun for example_weekday_branch_operator to 2025-08-26 00:00:00+00:00, run_after=2025-08-27 00:00:00+00:00
 [2025-08-27T23:07:24.094+0500] {processor.py:183} INFO - Processing /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/example_dags/example_branch_day_of_week_operator.py took 0.111 seconds
+[2025-08-27T23:08:25.667+0500] {processor.py:161} INFO - Started process (PID=95273) to work on /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/example_dags/example_branch_day_of_week_operator.py
+[2025-08-27T23:08:25.669+0500] {processor.py:830} INFO - Processing file /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/example_dags/example_branch_day_of_week_operator.py for tasks to queue
+[2025-08-27T23:08:25.669+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:25.669+0500] {dagbag.py:545} INFO - Filling up the DagBag from /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/example_dags/example_branch_day_of_week_operator.py
+[2025-08-27T23:08:25.675+0500] {processor.py:840} INFO - DAG(s) 'example_weekday_branch_operator' retrieved from /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/example_dags/example_branch_day_of_week_operator.py
+[2025-08-27T23:08:25.725+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:25.724+0500] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-27T23:08:25.733+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:25.733+0500] {dag.py:3954} INFO - Setting next_dagrun for example_weekday_branch_operator to 2025-08-26 00:00:00+00:00, run_after=2025-08-27 00:00:00+00:00
+[2025-08-27T23:08:25.769+0500] {processor.py:183} INFO - Processing /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/example_dags/example_branch_day_of_week_operator.py took 0.103 seconds

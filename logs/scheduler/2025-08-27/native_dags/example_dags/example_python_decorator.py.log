@@ -3542,3 +3542,11 @@
 [2025-08-27T23:07:37.504+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:07:37.504+0500] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-08-27T23:07:37.509+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:07:37.509+0500] {dag.py:3954} INFO - Setting next_dagrun for example_python_decorator to None, run_after=None
 [2025-08-27T23:07:37.517+0500] {processor.py:183} INFO - Processing /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/example_dags/example_python_decorator.py took 0.113 seconds
+[2025-08-27T23:08:44.112+0500] {processor.py:161} INFO - Started process (PID=95591) to work on /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/example_dags/example_python_decorator.py
+[2025-08-27T23:08:44.115+0500] {processor.py:830} INFO - Processing file /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/example_dags/example_python_decorator.py for tasks to queue
+[2025-08-27T23:08:44.115+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:44.115+0500] {dagbag.py:545} INFO - Filling up the DagBag from /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/example_dags/example_python_decorator.py
+[2025-08-27T23:08:44.133+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:44.133+0500] {example_python_decorator.py:80} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-08-27T23:08:44.134+0500] {processor.py:840} INFO - DAG(s) 'example_python_decorator' retrieved from /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/example_dags/example_python_decorator.py
+[2025-08-27T23:08:44.209+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:44.209+0500] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-27T23:08:44.214+0500] {logging_mixin.py:188} INFO - [2025-08-27T23:08:44.214+0500] {dag.py:3954} INFO - Setting next_dagrun for example_python_decorator to None, run_after=None
+[2025-08-27T23:08:44.222+0500] {processor.py:183} INFO - Processing /Users/dev/Library/Python/3.9/lib/python/site-packages/airflow/example_dags/example_python_decorator.py took 0.112 seconds
